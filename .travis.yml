@@ -3,7 +3,7 @@ notifications:
 sudo: required
 dist: trusty
 install:
- - source .Travis/texlive_install.sh
+ - source ./Travis/texlive_install.sh
 cache:
   directories:
     - /tmp/texlive
