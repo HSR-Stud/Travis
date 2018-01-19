@@ -19,9 +19,9 @@ if ! command -v texlua > /dev/null; then
   
 
   #sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
-  dir
+  
   # Install a minimal system
-  ./install-tl --profile=../texlive/texlive.profile
+  ./install-tl --profile=../Travis/texlive/texlive.profile
   
   cd ..
 fi
@@ -29,6 +29,7 @@ fi
 # Just including texlua so the cache check above works
 # Needed for any use of texlua even if not testing LuaTeX
 tlmgr install luatex
+tlmgr install koma-script
 
 # Needed for TeX Live 2017
 tlmgr install xkeyval
@@ -39,11 +40,6 @@ tlmgr install graphics
 tlmgr install required
 tlmgr install collection-fontsrecommended
 
-#sudo apt-get install texlive-fonts-recommended
-#sudo apt-get install texlive-latex-extra
-#sudo apt-get install exlive-fonts-extra 
-#sudo apt-get install dvipng
-#sudo apt-ge install install texlive-latex-recommended
 
 # Install babel languages
 #tlmgr install collection-langeuropean
@@ -59,26 +55,36 @@ tlmgr install hyphen-german
 # Index of packages: http://ctan.mirrors.hoobly.com/systems/texlive/tlnet/archive/
 # Other contrib packages: done as a block to avoid multiple calls to tlmgr
 # pgf includes tikz
-tlmgr install   \
+tlmgr install  acronym
+tlmgr install  	\
   adjustbox     \
   algorithmicx  \
   algorithms    \
   amsfonts      \
   amsmath       \
   amssymb       \
-  array         \
   amsthm        \
+  appendix      \
+  array         \
+  bibtex		\
+  biblatex		\
+  biblatex-ieee	\
+  bigfoot		\
   bm            \
   bookmark      \
   booktabs      \
   cancel        \
   caption       \
   centernot     \
-  courier       \
+  changepage	\
   collectbox    \
+  courier       \
+  csquotes		\
   ec            \
   enumerate     \
   enumitem      \
+  environ		\
+  epstopdf		\
   etoolbox      \
   exam          \
   fancybox      \
@@ -86,50 +92,71 @@ tlmgr install   \
   float         \
   floatflt      \
   fontenc       \
+  footmisc		\
+  framed		\
+  graphbox		\
   graphicx      \
   hyperref      \
-  jknapltx      \
-  lastpage      \
+  hyphenat      \
   imakeidx      \
   inputenc      \
+  jknapltx      \
+  l3kernel	    \
+  l3packages	\
+  lastpage      \
   latex-fonts   \
-  lm            \
   listings      \
   listofitems   \
+  lipsum		\
+  lm            \
   longtable     \
+  logreq		\
+  marginnote	\
   marvosym      \
   mathabx       \
   mathrsfs      \
   mathtools     \
+  mparhack		\
   multicol      \
   multirow      \
   opensans      \
-  pdfpages      \
+  paralist		\
   pdflscape     \
+  pdfpages      \
   pgf           \
   pgfplots      \
+  placeins		\
   polynom       \
   pxfonts       \
   rotating      \
   rsfs          \
-  subcaption    \
+  scrhack		\
   scalerel      \
+  setspace		\
   slantsc       \
   stackengine   \
   stmaryrd      \
-  thmtools      \
+  subcaption    \
   tabularx      \
   textcomp      \
+  thmtools      \
   tikz          \
-  times         \
   titlesec      \
+  tocloft		\
+  todonotes		\
+  tcolorbox		\
   trfsigns      \
   trsym         \
+  trimspaces	\
   txfonts       \
-  verbatim      \
   ulem          \
+  verbatim      \
+  varwidth		\
   wrapfig       \
-  xcolor        
+  xcolor        \
+  xpatch		\
+  xstring
+
 
 #fmtutil --no-strict --byengine=pdftex
 
