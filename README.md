@@ -14,14 +14,12 @@ Travis wird die Projekte automatisiert builden, und falls der Commit einen neuen
      - Name der Variable muss wieder `GITHUB_RELEASE_TOKEN` sein
 
 ## Anwendung
- Travis als Submodul einfügen  
- 
-     git submodule add https://github.com/HSR-Stud/Travis Travis
-
- .travis.yml in die oberste Ebene des Repos kopieren.  
- Das neue .travis.yml bearbeiten.  
-      - Unter skript und file den aktuellen Dokumentnamen einfügen.  
-      - Bibtex auskommentieren, falls es nicht benötigt wird.
+ - Travis als Submodul einfügen  
+     `git submodule add https://github.com/HSR-Stud/Travis Travis`
+ - `.travis.yml` in die oberste Ebene des Repos kopieren.  
+ - Das neue `.travis.yml` bearbeiten.  
+      - Unter `script` und `file` den aktuellen Dokumentnamen einfügen.  
+      - `bibtex` auskommentieren, falls es nicht benötigt wird.
 
 ## Build status im Readme anzeigen
 - Im Projekt auf den Build Status klicken (rechts neben dem Projektnamen)
