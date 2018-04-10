@@ -77,6 +77,7 @@ tlmgr install  	\
   caption       \
   centernot     \
   changepage	\
+  circuitikz	\
   collectbox    \
   courier       \
   csquotes		\
@@ -85,6 +86,7 @@ tlmgr install  	\
   enumitem      \
   environ		\
   epstopdf		\
+  esdiff		\
   etoolbox      \
   exam          \
   fancybox      \
