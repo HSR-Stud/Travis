@@ -1,6 +1,8 @@
 # Travis
      
-Travis wird die Projekte automatisiert builden, und falls der Commit einen neuen Tag hat diesen unter deinem Namen im Projekt releasen (Bedingungen für den Release können im `.travis.yml` angepasst werden). Dafür brauchst du einen Account in [Travis-CI](https://travis-ci.org/), und einen Token, mit welchem Travis sich bei GitHub authentifizieren und somit die builds releasen kann.
+Travis ist ein Tool um Repos automatisiert zu "builden". Falls im gewählten Repo ein neuer Tag erstellt wird, dann wird der Build (PDF-File) unter deinem Namen im Projekt released. \
+[Beispiel für einen Automatischen PDF-Build mit Travis](https://github.com/HSR-Stud/DT1/releases). \
+Die Bedingungen für die Erstellung eines neuen Release können im `.travis.yml` angepasst werden. Dafür brauchst du einen Account in [Travis-CI](https://travis-ci.org/), und einen Token, mit welchem Travis sich bei GitHub authentifizieren und somit die Builds releasen kann.
 
 ## Installation 
 - [Travis anmelden](https://travis-ci.org/) 
