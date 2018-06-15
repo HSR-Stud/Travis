@@ -135,10 +135,13 @@ tlmgr install  	\
   scrhack		\
   scalerel      \
   setspace		\
+  siunitx       \
   slantsc       \
   stackengine   \
   stmaryrd      \
   subcaption    \
+  subfig        \
+  subfigure     \
   tabularx      \
   textcomp      \
   thmtools      \
