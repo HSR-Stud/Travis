@@ -16,13 +16,13 @@ if ! command -v texlua > /dev/null; then
   wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
   tar -xzf install-tl-unx.tar.gz
   cd install-tl-20*
-  
+
 
   #sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
-  
+
   # Install a minimal system
   ./install-tl --profile=../Travis/texlive/texlive.profile
-  
+
   cd ..
 fi
 
@@ -66,6 +66,7 @@ tlmgr install  	\
   amsthm        \
   appendix      \
   array         \
+  arydshln      \
   bibtex		\
   biblatex		\
   biblatex-ieee	\
