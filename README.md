@@ -16,7 +16,8 @@ Die Bedingungen für die Erstellung eines neuen Release können im `.travis.yml`
      - Name der Variable muss wieder `GITHUB_RELEASE_TOKEN` sein
 
 ## Anwendung
- - Travis als Submodul einfügen  
+ - Travis als Submodul einfügen (**HTTPS verwenden, nicht ssh!**)
+ 
      `git submodule add https://github.com/HSR-Stud/Travis Travis`
  - `.travis.yml` in die oberste Ebene des Repos kopieren.  
  - Das neue `.travis.yml` bearbeiten.  
