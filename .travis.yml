@@ -1,36 +1,35 @@
+language: generic
+dist: bionic
+env:
+  global:
+    - TEX_MAIN=main.tex
+
 notifications:
   email: false
-sudo: required
-dist: trusty
+
 install:
- - dir
- - pwd
- - source ./Travis/texlive_install.sh
+  - source .travis/texlive/texlive_install.sh
+
 cache:
   directories:
     - /tmp/texlive
     - $HOME/.texlive
-# Change working directory so including files will work
-before_script:
-- dir
-- pwd
-script:
-# Prefix command with travis_wait x so it times out after 3 mins, because when the LaTeX doesn't compile pdflatex just hangs instead of quitting.
-- travis_wait 3 pdflatex -interaction=nonstopmode -halt-on-error ./BA.tex
-- bibtex ./BA.aux
-- travis_wait 3 pdflatex -interaction=nonstopmode -halt-on-error ./BA.tex
-- travis_wait 3 pdflatex -interaction=nonstopmode -halt-on-error ./BA.tex
 
-before_deploy:
-- dir
+before_script: cd $TRAVIS_BUILD_DIR/
+script:
+  # texliveonfly will try to download packages automatically
+  - texliveonfly --compiler=xelatex --arguments="-shell-escape" --terminal_only $TEX_MAIN
+  # latexmk will automatically handle bibtex and references
+  - latexmk -pdf -xelatex $TEX_MAIN
+
 deploy:
   provider: releases
   api_key:
-    secure: $GITHUB_RELEASE_TOKEN
+    secure: GITHUB_RELEASE_TOKEN
+  file_glob: true
   file:
-    - ./BA.pdf
+    - "./*.pdf"
   skip_cleanup: true
   on:
     tags: true
     all_branches: true
-
