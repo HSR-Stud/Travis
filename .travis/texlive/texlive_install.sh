@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+set -x
+
 # Originally from https://github.com/latex3/latex3
 
 # This script is used for building LaTeX files using Travis
@@ -10,7 +12,7 @@
 export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 if ! command -v texlua > /dev/null; then
   # Obtain TeX Live
-  wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+  wget https://ctan.kako-dev.de/systems/texlive/tlnet/install-tl-unx.tar.gz
   tar -xzf install-tl-unx.tar.gz
   cd install-tl-20*
 
@@ -19,6 +21,9 @@ if ! command -v texlua > /dev/null; then
 
   cd ..
 fi
+
+# add other mirros
+tlmgr repository set https://ctan.kako-dev.de/systems/texlive/tlnet/
 
 # Just including texlua so the cache check above works
 tlmgr install luatex xetex
